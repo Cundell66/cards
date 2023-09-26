@@ -11,7 +11,8 @@ func newDeck() deck {
 	cards := deck{}
 
 	cardSuits := []string {"Spades", "Diamonds", "Hearts", "Clubs"}
-	cardValues := []string {"Ace", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King"}
+	cardValues := []string {"Ace", "Two", "Three", "Four",} 
+	// "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King"}
 
 	card := "";
 
@@ -29,4 +30,8 @@ func (d deck) print(){
 	for _, card := range d{
 		fmt.Println(card)
 	}
+}
+
+func deal(d deck, handSize int) (deck, deck){
+	return d[:handSize], d[handSize:]
 }
